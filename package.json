@@ -1,0 +1,125 @@
+{
+	"name": "suzie-dent",
+	"version": "1.0.0",
+	"description": "A simple anagram listing tool named after Suzie Dent of Countdown's dictionary corner.",
+	"main": "suzie-dent.js",
+	"scripts": {
+		"generate-docs": "extract-documentation-comments -I source/main.js -O API.md",
+		"update-config": "hjson -j ci/github-actions.hjson | json2yaml --preserve-key-order -o .github/workflows/ci.yml",
+		"update-deps": "npm-check-updates -ux env-paths",
+		"release": "standard-version",
+		"publish-release": "git push --follow-tags origin main && npm publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Anadian/suzie-dent.git"
+	},
+	"keywords": [
+		"anagram",
+		"countdown",
+		"word",
+		"games",
+		"solver",
+		"suzie",
+		"dent",
+		"dictionary",
+		"corner",
+		"node",
+		"commonjs",
+		"cli",
+		"tool",
+		"free",
+		"libre",
+		"open",
+		"source",
+		"mit"
+	],
+	"author": "Anadian",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Anadian/suzie-dent/issues"
+	},
+	"homepage": "https://github.com/Anadian/suzie-dent#readme",
+	"bin": {
+		"suzie-dent": "./suzie-dent.js"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"eslintConfig": {
+		"env": {
+			"commonjs": true,
+			"es6": true,
+			"node": true
+		},
+		"extends": "eslint:recommended",
+		"globals": {
+			"Atomics": "readonly",
+			"SharedArrayBuffer": "readonly"
+		},
+		"parserOptions": {
+			"ecmaVersion": 11
+		},
+		"rules": {
+			"no-unused-vars": [
+				"warn"
+			],
+			"no-useless-escape": "off",
+			"no-empty": "warn"
+		}
+	},
+	"standard-version": {
+		"types": [
+			{
+				"type": "build",
+				"section": "Build",
+				"hidden": false
+			},
+			{
+				"type": "ci",
+				"section": "Continuous Integration",
+				"hidden": false
+			},
+			{
+				"type": "chore",
+				"section": "Chores",
+				"hidden": false
+			},
+			{
+				"type": "docs",
+				"section": "Documentation",
+				"hidden": false
+			},
+			{
+				"type": "feat",
+				"section": "Features",
+				"hidden": false
+			},
+			{
+				"type": "fix",
+				"section": "Bug Fixes",
+				"hidden": false
+			},
+			{
+				"type": "perf",
+				"section": "Performance",
+				"hidden": false
+			},
+			{
+				"type": "refactor",
+				"section": "Refactoring",
+				"hidden": false
+			},
+			{
+				"type": "style",
+				"section": "Code Style",
+				"hidden": false
+			},
+			{
+				"type": "test",
+				"section": "Tests",
+				"hidden": false
+			}
+		]
+	}
+}
